@@ -1,5 +1,7 @@
 
 
+
+
 require("dotenv").config;
 const express = require("express");
 const app = express();
@@ -46,16 +48,16 @@ app.post("/books", (req, res) => {
   res.send(book);
 });
 
-app.put("/books/:id", (req, res) => {
-  const book = books.find(b => b.id === parseInt(req.params.id));
+app.put("books/:id", (req, res) => {
+  const book = books.find((b) => b.id === parseInt(req.params.id));
   if (!book) res.status(404).send("Book not found");
   book.title = req.body.title;
   book.author = req.body.author;
   res.send(book);
 });
 
-app.delete("/books/:id", (req, res) => {
-  const book = books.find(b => b.id === parseInt(req.params.id));
+app.delete("books/:id", (req, res) => {
+  const book = books.find((b) => b.id === parseInt(req.params.id));
   if (!book) res.status(404).send("Book not found");
   const index = books.indexOf(book);
   book.splice(index, 1);
