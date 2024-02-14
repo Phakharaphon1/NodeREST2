@@ -48,7 +48,7 @@ app.get('/books', (req, res) => {
 
 
 app.get('/books/:id', (req, res) => {
-    Book.findByPk(req, res => {
+    Book.findByPk(req.params.id).then(book => {
         if (!book) {
             res.status(404).send('Book not found');
         }  else {
