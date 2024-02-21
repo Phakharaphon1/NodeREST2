@@ -9,7 +9,7 @@ const app = express();
 
 
 app.use(express.json());
-const dbUrl = "postgres://webadmin:MOAata75817@node57121-phakharaphon-noderest.proen.app.ruk-com.cloud/Books";
+const dbUrl = 'postgres://webadmin:MOAata75817@node57121-phakharaphon-noderest.proen.app.ruk-com.cloud/Books';
 const sequelize = new Sequelize(dbUrl);
 /*const sequelize = new Sequelize('database', 'username', 'password', {
     host: 'localhost',
